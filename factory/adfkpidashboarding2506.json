@@ -1,0 +1,9 @@
+{
+	"name": "adfkpidashboarding2506",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9cbbf03a-f68e-44e6-8313-00efab650b18",
+		"tenantId": "4c1837bc-59c4-4332-988a-3c23893cc8e8"
+	}
+}
