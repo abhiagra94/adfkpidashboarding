@@ -131,7 +131,7 @@
 											"type": "Expression"
 										},
 										"sourcedatalake": {
-											"value": "@item().Outputdirectory",
+											"value": "@concat(formatDateTime(utcNow(),'dd_MM_yyyy'),'/',item().Outputdirectory)",
 											"type": "Expression"
 										},
 										"sourcefile": {
@@ -216,7 +216,7 @@
 											"type": "Expression"
 										},
 										"sourcedatalake": {
-											"value": "@item().Outputdirectory",
+											"value": "@concat(formatDateTime(utcNow(),'dd_MM_yyyy'),'/',item().Outputdirectory)",
 											"type": "Expression"
 										},
 										"sourcefile": {
@@ -247,6 +247,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"date": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
