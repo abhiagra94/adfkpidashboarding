@@ -16,23 +16,17 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from dbo.metadata",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "DS_source",
+						"referenceName": "DS_sqldatabase",
 						"type": "DatasetReference",
 						"parameters": {
-							"sourcecontainer": "landing",
-							"sourcedatalake": "Folder1",
-							"sourcefile": "metadata.csv"
+							"sqldatabase": "dbo",
+							"sqltablename": "metadata"
 						}
 					},
 					"firstRowOnly": false
