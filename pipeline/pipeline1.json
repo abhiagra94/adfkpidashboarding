@@ -241,11 +241,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"date": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
