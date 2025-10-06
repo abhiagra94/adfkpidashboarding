@@ -139,6 +139,8 @@
 						{
 							"name": "Stored procedure1",
 							"type": "SqlServerStoredProcedure",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Copy data1",
@@ -283,6 +285,8 @@
 						{
 							"name": "Stored procedure2",
 							"type": "SqlServerStoredProcedure",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Copy data2",
