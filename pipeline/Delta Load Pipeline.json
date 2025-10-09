@@ -80,7 +80,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from sales where modified_date > '@{activity('Lookup_oldwatermark').output.firstRow.oldwatermark}' and modified_date <= '@{activity('Lookup_newwatermark').output.firstRow.modified_date}'",
+							"value": "select * from sales where modified_date > '@{activity('Lookup_oldwatermark').output.firstRow.oldwatermark}' and modified_date <= '@{activity('Lookup_newwatermark').output.firstRow.newwatermark}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -144,7 +144,7 @@
 					"storedProcedureParameters": {
 						"newwatermark": {
 							"value": {
-								"value": "@{activity('Lookup_newwatermark').output.firstRow.modified_date}",
+								"value": "@{activity('Lookup_newwatermark').output.firstRow.newwatermark}",
 								"type": "Expression"
 							},
 							"type": "Datetime"
