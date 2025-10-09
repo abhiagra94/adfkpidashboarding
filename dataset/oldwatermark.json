@@ -1,0 +1,21 @@
+{
+	"name": "oldwatermark",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_sqldbkpidashboarding",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "oldwatermark",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "oldwatermark"
+		}
+	}
+}

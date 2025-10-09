@@ -1,0 +1,16 @@
+{
+	"name": "sinksqldatabase",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales"
+		}
+	}
+}
