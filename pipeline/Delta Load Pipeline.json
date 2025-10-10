@@ -125,7 +125,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy_data_source_to_datalake",
+						"activity": "Update_oldwatermark_with_newwatermark",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -185,7 +185,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "copy_data_lake_to_sql_server",
+						"activity": "Copy_data_source_to_datalake",
 						"dependencyConditions": [
 							"Succeeded"
 						]
