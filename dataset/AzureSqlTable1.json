@@ -1,8 +1,8 @@
 {
-	"name": "sourcesqldatabase",
+	"name": "AzureSqlTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "source",
+			"referenceName": "LS_sqldbkpidashboarding",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
