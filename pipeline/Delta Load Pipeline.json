@@ -185,7 +185,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"watermark": {
-								"value": "@{activity('Lookup_newwatermark').output.firstRow.newwatermark}",
+								"value": "@{activity('Lookup_oldwatermark').output.firstRow.oldwatermark}",
 								"type": "Expression"
 							}
 						}
