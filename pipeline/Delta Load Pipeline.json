@@ -119,7 +119,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"watermark": {
-								"value": "@activity('Lookup_newwatermark').output",
+								"value": "@{activity('Lookup_newwatermark').output.firstRow.newwatermark}",
 								"type": "Expression"
 							}
 						}
@@ -147,9 +147,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
 					},
 					"sink": {
 						"type": "AzureSqlSink",
@@ -175,8 +181,14 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "getdeltafromsource",
-						"type": "DatasetReference"
+						"referenceName": "datalakeload",
+						"type": "DatasetReference",
+						"parameters": {
+							"watermark": {
+								"value": "@{activity('Lookup_newwatermark').output.firstRow.newwatermark}",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
