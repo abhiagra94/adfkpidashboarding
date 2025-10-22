@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
+		"source_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'source'"
+		},
 		"LS_sgkpidashboarding_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://sgkpidashboarding.dfs.core.windows.net/"
@@ -46,6 +50,18 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "cloud"
+		},
+		"source_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlserverkpidashboarding.database.windows.net"
+		},
+		"source_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "source"
+		},
+		"source_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Cloud"
 		},
 		"containerUri": {
 			"type": "string",
@@ -83,6 +99,9 @@
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
 					},
+					"source_password": {
+						"value": "[parameters('source_password')]"
+					},
 					"LS_sgkpidashboarding_properties_typeProperties_url": {
 						"value": "[parameters('LS_sgkpidashboarding_properties_typeProperties_url')]"
 					},
@@ -103,6 +122,15 @@
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
+					"source_properties_typeProperties_server": {
+						"value": "[parameters('source_properties_typeProperties_server')]"
+					},
+					"source_properties_typeProperties_database": {
+						"value": "[parameters('source_properties_typeProperties_database')]"
+					},
+					"source_properties_typeProperties_userName": {
+						"value": "[parameters('source_properties_typeProperties_userName')]"
 					}
 				}
 			},
