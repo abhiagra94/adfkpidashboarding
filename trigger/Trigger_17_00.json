@@ -9,6 +9,15 @@
 					"referenceName": "Delta Load Pipeline",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline3",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"env": "prod"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
