@@ -46,6 +46,9 @@
 		},
 		"source_properties_typeProperties_userName": {
 			"value": "Cloud"
+		},
+		"Trigger_17_00_properties_pipeline3_parameters_env": {
+			"value": "prod"
 		}
 	}
 }
