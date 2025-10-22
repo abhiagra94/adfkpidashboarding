@@ -16,6 +16,10 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "Untitled2.csv",
+				"folderPath": {
+					"value": "@dataset().env",
+					"type": "Expression"
+				},
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
