@@ -2,8 +2,15 @@
 	"name": "Trigger_17_00",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
-		"pipelines": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Delta Load Pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
