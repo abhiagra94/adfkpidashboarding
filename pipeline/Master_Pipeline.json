@@ -1,0 +1,56 @@
+{
+	"name": "Master_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Delta Load Pipeline",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Delta Load Pipeline",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Email Alert",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Delta Load Pipeline",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "emailtrigger",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Subject": "Delta Load Pipeline Error",
+						"Message": {
+							"value": "@activity('Delta Load Pipeline').Error.Message",
+							"type": "Expression"
+						},
+						"PipelineName": "Delta Load Pipeline",
+						"DataFactory": "adfkpidashboarding2506"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
