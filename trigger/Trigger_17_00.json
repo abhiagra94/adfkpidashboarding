@@ -18,12 +18,6 @@
 				"parameters": {
 					"env": "prod"
 				}
-			},
-			{
-				"pipelineReference": {
-					"referenceName": "pipeline6",
-					"type": "PipelineReference"
-				}
 			}
 		],
 		"type": "ScheduleTrigger",

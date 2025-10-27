@@ -16,10 +16,6 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "delta.csv",
-				"folderPath": {
-					"value": "@dataset().watermark",
-					"type": "Expression"
-				},
 				"fileSystem": "deltaload"
 			},
 			"columnDelimiter": ",",
