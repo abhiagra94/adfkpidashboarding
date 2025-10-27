@@ -1,5 +1,5 @@
 {
-	"name": "trigger1",
+	"name": "trigger_every5min_wait1",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
