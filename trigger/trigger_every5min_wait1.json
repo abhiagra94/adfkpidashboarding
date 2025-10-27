@@ -3,12 +3,6 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipeline": {
-			"pipelineReference": {
-				"referenceName": "tumbling_window_wait_for_previousrun_finish",
-				"type": "PipelineReference"
-			}
-		},
 		"type": "TumblingWindowTrigger",
 		"typeProperties": {
 			"frequency": "Minute",
