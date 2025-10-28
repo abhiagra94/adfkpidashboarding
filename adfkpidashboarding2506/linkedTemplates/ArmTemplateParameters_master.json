@@ -47,6 +47,9 @@
 		"source_properties_typeProperties_userName": {
 			"value": "Cloud"
 		},
+		"trigger2_properties_typeProperties_scope": {
+			"value": "/subscriptions/b5e3b6be-2154-40eb-b57d-4a03c286df9d/resourceGroups/rg-kpidashboarding/providers/Microsoft.Storage/storageAccounts/sgkpidashboarding"
+		},
 		"containerUri": {
 			"value": ""
 		},

@@ -63,6 +63,10 @@
 			"type": "string",
 			"defaultValue": "Cloud"
 		},
+		"trigger2_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/b5e3b6be-2154-40eb-b57d-4a03c286df9d/resourceGroups/rg-kpidashboarding/providers/Microsoft.Storage/storageAccounts/sgkpidashboarding"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -149,6 +153,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"trigger2_properties_typeProperties_scope": {
+						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
 					}
 				}
 			},
