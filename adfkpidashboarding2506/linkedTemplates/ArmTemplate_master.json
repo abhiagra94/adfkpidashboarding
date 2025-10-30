@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfkpidashboarding2506"
 		},
+		"LS_sadevkpidashboarding2506_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_sadevkpidashboarding2506'"
+		},
 		"LS_sgkpidashboarding_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_sgkpidashboarding'"
@@ -94,6 +98,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_sadevkpidashboarding2506_connectionString": {
+						"value": "[parameters('LS_sadevkpidashboarding2506_connectionString')]"
+					},
 					"LS_sgkpidashboarding_accountKey": {
 						"value": "[parameters('LS_sgkpidashboarding_accountKey')]"
 					},
@@ -153,6 +160,26 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfkpidashboarding2506_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adfkpidashboarding2506_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger2_properties_typeProperties_scope": {
 						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
@@ -160,7 +187,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'adfkpidashboarding2506_ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'adfkpidashboarding2506_ArmTemplate_1')]"
 			]
 		}
 	]
