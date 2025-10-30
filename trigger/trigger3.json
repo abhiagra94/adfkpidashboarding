@@ -9,6 +9,12 @@
 					"referenceName": "SAPtodatalake",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "oracletodatalake",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
