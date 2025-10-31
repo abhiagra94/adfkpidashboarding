@@ -57,7 +57,7 @@
 								"type": "Expression"
 							},
 							"directoryname": {
-								"value": "@pipeline().parameters.env",
+								"value": "@concat(pipeline().parameters.sourcedirectoryname,'_',pipeline().globalParameters.env)",
 								"type": "Expression"
 							},
 							"filename": {
@@ -96,7 +96,7 @@
 			},
 			"sourcefilename": {
 				"type": "string",
-				"defaultValue": "Untitled2.csv"
+				"defaultValue": "Department.csv"
 			},
 			"sinkcontainernam": {
 				"type": "string",
@@ -106,13 +106,13 @@
 				"type": "string",
 				"defaultValue": "metadata.csv"
 			},
-			"env": {
-				"type": "string",
-				"defaultValue": "sample.csv"
-			},
 			"sinkdirctoryname": {
 				"type": "string",
 				"defaultValue": "testdev"
+			},
+			"sourcedirectoryname": {
+				"type": "string",
+				"defaultValue": "folder"
 			}
 		},
 		"annotations": []
