@@ -1,0 +1,124 @@
+{
+	"name": "PL_Datalake",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_sgkpidashboarding",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": {
+								"value": "@pipeline().parameters.sourcecontainername",
+								"type": "Expression"
+							},
+							"directoryname": {
+								"value": "@pipeline().parameters.sourcedirectoryname",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@pipeline().parameters.sourcefilename",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_sgkpidashboarding",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": {
+								"value": "@pipeline().parameters.sinkcontainernam",
+								"type": "Expression"
+							},
+							"directoryname": {
+								"value": "@pipeline().parameters.sinkdirctoryname",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@pipeline().parameters.sinkfilename",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"sourcecontainername": {
+				"type": "string",
+				"defaultValue": "landing"
+			},
+			"sourcedirectoryname": {
+				"type": "string",
+				"defaultValue": "Folder1"
+			},
+			"sourcefilename": {
+				"type": "string",
+				"defaultValue": "metadata.csv"
+			},
+			"sinkcontainernam": {
+				"type": "string",
+				"defaultValue": "landing"
+			},
+			"sinkdirctoryname": {
+				"type": "string",
+				"defaultValue": "Folder2"
+			},
+			"sinkfilename": {
+				"type": "string",
+				"defaultValue": "metadata.csv"
+			},
+			"env": {
+				"type": "string",
+				"defaultValue": "dev"
+			}
+		},
+		"annotations": []
+	}
+}
